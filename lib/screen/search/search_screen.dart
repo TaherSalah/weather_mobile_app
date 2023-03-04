@@ -21,7 +21,12 @@ class SearchScreen extends StatelessWidget {
               contentPadding: EdgeInsets.symmetric(vertical: 25,horizontal: 20),
               lable: Text('search'),
               hint: 'Search With City',
+onChanged: (value){
+},
+              onSubmitted: (value){
+                print('data $value');
 
+              },
               controller: TextEditingController(),
               icon: Icon(Icons.search),
             ),

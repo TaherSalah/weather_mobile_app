@@ -3,6 +3,16 @@ import 'package:weather/screen/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
+
+print(getUserDate());
+}
+
+dynamic getUserDate(){
+  var order=fetchOrder();
+  return 'order done $order';
+}
+dynamic fetchOrder(){
+  Future.delayed(Duration(seconds: 2),()=>'ddddd');
 }
 
 class MyApp extends StatelessWidget {

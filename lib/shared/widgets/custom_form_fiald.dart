@@ -10,8 +10,9 @@ class CustomFormField extends StatelessWidget {
       this.validator,
       this.maxLength,
       required this.controller,
-        this.contentPadding,
+      this.contentPadding,
       this.lable,
+        this.onSubmitted,
       this.obscureText = false,
       this.icon})
       : super(key: key);
@@ -21,6 +22,7 @@ class CustomFormField extends StatelessWidget {
   final int? maxLength;
   final void Function(String?)? onSaved;
   final void Function(String)? onChanged;
+  final void Function(String)? onSubmitted;
   final String? Function(String?)? validator;
   final TextEditingController controller;
   final Widget? icon;
@@ -49,9 +51,9 @@ class CustomFormField extends StatelessWidget {
           validator: validator,
           maxLines: maxLines,
           cursorColor: Colors.amber,
-
+          onFieldSubmitted: onSubmitted,
           decoration: InputDecoration(
-            contentPadding:contentPadding ,
+            contentPadding: contentPadding,
             prefixIcon: icon,
             label: lable,
             hintText: hint,
